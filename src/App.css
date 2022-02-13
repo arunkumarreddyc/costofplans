@@ -61,3 +61,7 @@ section.pricing {
     opacity: 1;
   }
 }
+
+.feature-text:first-child {
+  font-weight: bold;
+}
