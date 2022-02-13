@@ -16,7 +16,16 @@ export default function Plans({ name, price, features }) {
           <ul className="fa-ul">
             {features.map((item, index) => {
               return (
-                <li key={index} className={!item.enabled ? "text-muted" : ""}>
+                 <li
+                  key={index}
+                  className={
+                    !item.enabled
+                      ? "text-muted"
+                      : name === "Free"
+                      ? ""
+                      : "feature-text"
+                  }
+                >
                   <span className="fa-li">
                     <i
                       className={
@@ -24,7 +33,13 @@ export default function Plans({ name, price, features }) {
                       }
                     ></i>
                   </span>
-                  {item.name}
+                  {item.name === "Unlimited Free Subdomains" ? (
+                    <span>
+                      <b>Unlimited</b> Free Subdomains
+                    </span>
+                  ) : (
+                    item.name
+                  )}
                 </li>
               );
             })}
